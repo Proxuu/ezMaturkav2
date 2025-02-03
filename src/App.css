@@ -8,17 +8,139 @@
   align-items: center;
   justify-content: center;
 }
-#logo-box{
-  width: 15%;
-  
-}
 #logo{
-  height: 50px;
-}
-#category-box{
-  width: 70%;
-}
-#category-ham-box{
-  width: 15%;
+  position: absolute;
+  left: 15px;
+  top: 2px;
 }
 
+@media only screen and (max-width: 1750px) {
+  #logo{
+      display: none;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #logo{
+      display: block;
+      left: auto;
+  }
+}
+#category-box {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cell-box {
+  height: 50px;
+}
+.cell:hover, .category-link {
+  color: red;
+}
+.category-link{
+  text-decoration: none;
+  color: black;
+}
+.cell {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  font-size: 15px;
+  color: rgb(22, 22, 22);
+  font-weight: 550;
+  text-decoration: none;
+}
+.cell:hover {
+  border-bottom: 5px solid red;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+#backgorund{
+  backdrop-filter: blur(0px);
+  opacity: 0;
+  transition: 0.2s ease;
+}
+#background.activee{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  opacity: 1;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+.nav-links {
+  color: rgb(31, 31, 31);
+  padding-left: 10px;
+  padding-top: 50px;
+  flex-direction: column;
+  width: 350px;
+  height: 100%;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  right: -350px;
+  background-color: rgb(255, 255, 255);
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0px 0px 10px 1px rgba(27, 27, 27, 0.6);
+  transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.link{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-family: arial;
+  font-size: 20px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.link:hover{
+  color: red;
+
+}
+.nav-links.active {
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 100;
+  
+}
+
+@media only screen and (max-width: 1200px) {
+  #cell-box {
+      display: none;
+  }
+}
+.ham-cell{
+  font-size: 18px;
+  font-family: arial;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+.ham-cell:hover{
+  color: red;
+  border-left: 5px solid red;
+}
+#table{
+  margin-top: 40px;
+}
+#logout-table{
+  display: none;
+}
